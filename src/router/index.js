@@ -17,7 +17,7 @@ const routes = [
         }
       },
       {
-        path: 'tasks',
+        path: '/tasks',
         name: 'TasksList',
         component: () => import('@/views/TaskList.vue'),
         meta: {

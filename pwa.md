@@ -15,7 +15,7 @@ npm
 # Aguardar download e criação da estrutura de pastas
 
 # Entrar na pasta
-cd aplicaca-pra
+cd aplicaca-pwa
 
 # Abrir com o vscode
 code .

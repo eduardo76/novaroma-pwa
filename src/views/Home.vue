@@ -1,14 +1,15 @@
 <script setup>
-import { computed } from 'vue';
-import { useAppStore } from '@/store/app';
-const appStore = useAppStore();
+  import { computed } from 'vue';
+  import { useAppStore } from '@/store/app';
+  const appStore = useAppStore();
 
-const tasks_count = computed(() => appStore.tasks.length);
+  const tasks_count = computed(() => appStore.tasks.length);
 
+import MeuComponente from '@/components/MeuComponente.vue';
 </script>
 
 <template>
-  <v-card color="primary">
+  <v-card color="primary" class="mb-5">
     <v-card-title class="text-h5">
       Tarefas <span v-if="tasks_count > 0">({{ tasks_count }})</span>
     </v-card-title>
@@ -21,6 +22,9 @@ const tasks_count = computed(() => appStore.tasks.length);
       </v-btn>
     </v-card-actions>
   </v-card>
+
+  <!-- <meu-componente></meu-componente> -->
+
 </template>
 
 

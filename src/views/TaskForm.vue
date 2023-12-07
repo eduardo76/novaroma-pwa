@@ -36,7 +36,7 @@ onMounted(() => {
 const campoObrigatorio = value => !!value || "Campo obrigatório";
 
 // Funções da tela
-const cancelar = function() {
+const cancelar = () => {
   // Cancelar e volta para a tela de tarefas
   router.push({ name: 'TasksList' });
 }
@@ -46,10 +46,10 @@ const salvar = async () => {
   try {
     loading.value = true;
 
-    if (route.params.id) {
-      await appStore.updateTask();
-    } else {
+    if (route.name == 'TasksAdd') {
       await appStore.saveTask();
+    } else {
+      await appStore.updateTask();
     }
 
     // Navega para a lista de tarefas

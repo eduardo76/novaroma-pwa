@@ -24,7 +24,7 @@ export default defineConfig({
       includeAssets: ['favicon.ico', 'apple-touch-icon-180x180.png', 'maskable-icon-512x512.png'],
       manifest: {
         name: 'Novaroma Tarefas',
-        short_name: 'Tarefas',
+        short_name: 'Novaroma Tarefas',
         description: 'Gerenciador de Tarefas Novaroma',
         theme_color: '#ffffff',
         display: "standalone",
