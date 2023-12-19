@@ -46,7 +46,7 @@
     if (!autenticated_user) {
       alert('Usuario ou senha inválidos');
     } else {
-      router.push({ name: 'Home' });
+      router.push({ name: 'TasksList' });
     }
 
   }

@@ -17,6 +17,9 @@ import MeuComponente from '@/components/MeuComponente.vue';
     <v-card-text>Clique no botão abaixo para adicionar novas tarefas</v-card-text>
 
     <v-card-actions>
+      <v-btn class="ms-2" size="small" @click="$router.push({ name: 'TasksList' })">
+        Lista de Tarefas
+      </v-btn>
       <v-btn class="ms-2" variant="outlined" size="small" @click="$router.push({ name: 'TasksList' })">
         Adicionar
       </v-btn>
