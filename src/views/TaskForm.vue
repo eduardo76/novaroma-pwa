@@ -10,22 +10,23 @@ const appStore = useAppStore();
 const loading = ref(false);
 const form_valid = ref(true);
 
-// const task = ref({
-//   id: null,
-//   title: '',
-//   description: '',
-//   done: false
-// });
-
 // Mapeia a task selecionada do store
 const task = computed(() => appStore.task);
 
-onMounted(() => {
+// Executado quando a tela é montada
+onMounted(async () => {
 
+  // Se a rota chamada for a rota de edição
   if (route.name == 'TasksEdit') {
-    appStore.findTaskById(route.params.id);
-  } else {
-    appStore.createNewTask();
+    await appStore.getTask(route.params.id);
+  } else { // Se a rota chamada for a rota de adição
+
+    // Limpa os dados do formulário
+    appStore.task = {
+      title: '',
+      description: '',
+      done: false
+    }
   }
 
 })
@@ -47,9 +48,9 @@ const salvar = async () => {
     loading.value = true;
 
     if (route.name == 'TasksAdd') {
-      await appStore.saveTask();
+      await appStore.saveTask(); // Se estiver adicionando, salva
     } else {
-      await appStore.updateTask();
+      await appStore.updateTask(); // Se estiver editando, atualiza
     }
 
     // Navega para a lista de tarefas
